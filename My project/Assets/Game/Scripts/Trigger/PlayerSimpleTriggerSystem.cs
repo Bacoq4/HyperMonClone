@@ -9,7 +9,7 @@ namespace CoreGame.Trigger
     public class PlayerSimpleTriggerSystem : BaseTriggerSystem
     {
         [SerializeField] private BallCollector ballCollector;
-        [SerializeField] private MinionCollector minionCollector;
+        [SerializeField] private MonsterCollector monsterCollector;
 
         protected override void ImplementOnTriggerEnter(Collider other)
         {
@@ -23,6 +23,11 @@ namespace CoreGame.Trigger
             {
                 ballCollector.collectXBall(50);
                 Destroy(other.gameObject);
+            }
+
+            if (other.CompareTag("monsterCard"))
+            {
+                
             }
         }
     }   

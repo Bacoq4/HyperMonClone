@@ -27,7 +27,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3380118712814860614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.95}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -38,7 +38,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: -0.91, y: 0.89}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 412.6306, y: 497.1858}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3380118712814860618
@@ -137,7 +137,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.43, y: -7.06}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 225.78, y: 413.45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3380118713669973344
@@ -341,6 +341,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MonsterCard
       objectReference: {fileID: 0}
+    - target: {fileID: 7477535365483394383, guid: 5f4b1e15920b64535b9cf7c576ae8d24, type: 3}
+      propertyPath: m_TagString
+      value: monsterCard
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7477535365483394381, guid: 5f4b1e15920b64535b9cf7c576ae8d24, type: 3}
     - {fileID: 7477535365483394382, guid: 5f4b1e15920b64535b9cf7c576ae8d24, type: 3}
@@ -351,3 +355,34 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7477535365483394379, guid: 5f4b1e15920b64535b9cf7c576ae8d24, type: 3}
   m_PrefabInstance: {fileID: 2792156002394194193}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4718138377082287198 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7477535365483394383, guid: 5f4b1e15920b64535b9cf7c576ae8d24, type: 3}
+  m_PrefabInstance: {fileID: 2792156002394194193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &5903199645095686770
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718138377082287198}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.28, y: 4.03, z: 0.76}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &-6970381634985924961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4718138377082287198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a87f0cb57370f4069bc27d6d4f7e4d14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _monsterType: 0

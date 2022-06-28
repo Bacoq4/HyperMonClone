@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6970381634985924961, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: monsterType
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4718138377082287194, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -53,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4718138377082287198, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: m_Name
-      value: MonsterCard
+      value: MonsterCardVampire
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}

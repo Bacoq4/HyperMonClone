@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -6970381634985924961, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: monsterType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3380118713864112811, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: m_Sprite
       value: 

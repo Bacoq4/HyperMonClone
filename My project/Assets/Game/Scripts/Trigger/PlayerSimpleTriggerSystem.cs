@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using CoreGame.Collectable;
 using CoreGame.Collector;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -27,7 +28,8 @@ namespace CoreGame.Trigger
 
             if (other.CompareTag("monsterCard"))
             {
-                
+                MonsterCard monsterCard = other.GetComponent<MonsterCard>();
+                monsterCollector.addMonster(monsterCard.MonsterType);
             }
         }
     }   

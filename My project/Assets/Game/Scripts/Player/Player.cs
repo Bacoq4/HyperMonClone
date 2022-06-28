@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace CoreGame.PlayerIndication
 {
-    // player indicator class in prefab
+    // player indicator in prefab for now
     public class Player : MonoBehaviour
     {
         

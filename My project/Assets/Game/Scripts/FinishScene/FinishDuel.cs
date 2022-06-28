@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CoreGame.EnemyIndication;
 using CoreGame.PlayerIndication;
 using DG.Tweening;
 using UnityEngine;
@@ -13,7 +14,7 @@ namespace CoreGame.Finish
     {
         [SerializeField] private FinishTrigger finishTrigger;
         [SerializeField] private Transform playerFinishPoint;
-        
+        [SerializeField] private Enemy enemy;
         
         private void Start()
         {
@@ -32,19 +33,21 @@ namespace CoreGame.Finish
             player.transform.DOMove(finishPos,1);
             player.transform.DOLookAt(lookPos, 1).SetEase(Ease.Linear).OnComplete(() =>
             {
-                
+                StartCoroutine(StartFinishDuel());
             });
         }
 
-        private IEnumerator startFinishDuel()
+        private IEnumerator StartFinishDuel()
         {
-            yield return new WaitForSeconds(1);
+            enemy.gameObject.SetActive(true);
+
+            while (true)
+            {
+                yield return new WaitForSeconds(1);
+            }
+            
         }
         
-        void Update()
-        {
-        
-        }
     }
    
 }

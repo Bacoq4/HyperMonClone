@@ -8,6 +8,7 @@ TagManager:
   - pokeball
   - xPokeball
   - collectable
+  - monsterCard
   layers:
   - Default
   - TransparentFX

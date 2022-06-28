@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CoreGame.Collectable
+namespace CoreGame.Monsters
 {
     public enum MonsterType
     {

@@ -47,6 +47,8 @@ namespace CoreGame.UI
         {
             UICanvas.SetActive(true);
         }
+        
+        
     }
    
 }

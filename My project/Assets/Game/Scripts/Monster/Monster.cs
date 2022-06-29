@@ -8,6 +8,18 @@ namespace CoreGame.Monsters
     {
         [SerializeField] private MonsterType _monsterType;
         public MonsterType MonsterType => _monsterType;
+
+        [SerializeField] private int _attackPower;
+        public int AttackPower => _attackPower;
+
+
+        [SerializeField] private Sprite _monsterSprite;
+
+        public Sprite MonsterSprite
+        {
+            get => _monsterSprite;
+            set => _monsterSprite = value;
+        }
     }
 
 }

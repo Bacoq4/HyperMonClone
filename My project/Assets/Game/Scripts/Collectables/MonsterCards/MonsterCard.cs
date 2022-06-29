@@ -10,6 +10,9 @@ namespace CoreGame.Collectable
         [SerializeField] private MonsterType _monsterType;
         public MonsterType MonsterType => _monsterType;
 
+        [SerializeField] private int _moneyCost;
+        public int MoneyCost => _moneyCost;
+
     }
 
    

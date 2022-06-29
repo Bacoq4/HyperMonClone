@@ -9,17 +9,22 @@ namespace CoreGame.Collector
     public class MonsterCollector : Collector
     {
         
-        [SerializeField] private List<Monster> possessedMonsters;
+        [SerializeField] private List<Monster> _possessedMonsters;
         [SerializeField] private Monster[] monsterPrefabs;
         [SerializeField] private Transform[] monsterHolders;
-        
+
+        public List<Monster> getPossessedMonsters()
+        {
+            return _possessedMonsters;
+        }
+
         public void addMonster(MonsterType monsterType)
         {
             bool isThereEmptyHolder = IsThereEmptyHolder();
             if (!isThereEmptyHolder) { return; }
 
             Monster monster = SpawnMonster(monsterType);
-            possessedMonsters.Add(monster);
+            _possessedMonsters.Add(monster);
         }
 
         private Monster SpawnMonster(MonsterType monsterType)

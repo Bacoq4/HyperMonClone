@@ -8,6 +8,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -6970381634985924961, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: _moneyCost
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: -6970381634985924961, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: monsterType
       value: 3
       objectReference: {fileID: 0}

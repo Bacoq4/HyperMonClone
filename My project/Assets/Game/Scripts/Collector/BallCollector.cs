@@ -6,19 +6,19 @@ namespace CoreGame.Collector
 {
     public class BallCollector : Collector
     {
-        [SerializeField] private int ballCount;
-
+        [SerializeField] private int _ballCount;
+        public int BallCount => _ballCount;
         public void collectBall(int xAmount)
         {
-            ballCount += xAmount;
+            _ballCount += xAmount;
         }
 
         public void collectXBall(int xAmount)
         {
-            ballCount -= xAmount;
-            if (ballCount < 0)
+            _ballCount -= xAmount;
+            if (_ballCount < 0)
             {
-                ballCount = 0;
+                _ballCount = 0;
             }
         }
     }

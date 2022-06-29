@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CoreGame.Collectable;
 using CoreGame.Collector;
-using Unity.VisualScripting;
+using DG.Tweening;
 using UnityEngine;
 
 namespace CoreGame.Trigger
@@ -12,6 +12,7 @@ namespace CoreGame.Trigger
         [SerializeField] private BallCollector ballCollector;
         [SerializeField] private MonsterCollector monsterCollector;
 
+        [SerializeField] private float backUpDistance;
         protected override void ImplementOnTriggerEnter(Collider other)
         {
             if (other.CompareTag("pokeball"))
@@ -29,7 +30,14 @@ namespace CoreGame.Trigger
             if (other.CompareTag("monsterCard"))
             {
                 MonsterCard monsterCard = other.GetComponent<MonsterCard>();
-                monsterCollector.addMonster(monsterCard.MonsterType);
+                if (ballCollector.BallCount < monsterCard.MoneyCost)
+                {
+                    transform.DOMove(transform.position - transform.forward * backUpDistance, 1);
+                }
+                else
+                {
+                    monsterCollector.addMonster(monsterCard.MonsterType);
+                }
             }
         }
     }   

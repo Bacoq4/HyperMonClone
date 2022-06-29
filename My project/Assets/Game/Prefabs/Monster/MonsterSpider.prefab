@@ -64,6 +64,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1610938270721872493, guid: 006a81599987a4d2ab554a7eb1b4bf1e, type: 3}
+      propertyPath: _attackPower
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1610938270721872493, guid: 006a81599987a4d2ab554a7eb1b4bf1e, type: 3}
+      propertyPath: _monsterSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: d1803ba51ef6841e9831e28f8602169f, type: 3}
     - target: {fileID: 2661292862551364896, guid: 006a81599987a4d2ab554a7eb1b4bf1e, type: 3}
       propertyPath: m_Name
       value: MonsterSpider

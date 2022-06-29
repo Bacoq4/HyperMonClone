@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -18,6 +19,7 @@ namespace CoreGame.UI
         [SerializeField] private Image[] monsterImages;
 
         [SerializeField] private MonsterCollector monsterCollector;
+        [SerializeField] private GameObject UICanvas;
 
         public void InitializeFinalCards()
         {
@@ -28,17 +30,22 @@ namespace CoreGame.UI
                 cardPowerText[i].text = monsters[i].AttackPower.ToString();
                 if (monsters[i].AttackPower <= 10)
                 {
-                    cardBackgrounds[i].material.color = Color.yellow;
+                    cardBackgrounds[i].color = Color.yellow;
                 }
                 else if (monsters[i].AttackPower <= 15)
                 {
-                    cardBackgrounds[i].material.color = Color.cyan;
+                    cardBackgrounds[i].color = Color.cyan;
                 }
                 else if (monsters[i].AttackPower <= 20)
                 {
-                    cardBackgrounds[i].material.color = Color.magenta;
+                    cardBackgrounds[i].color = Color.magenta;
                 }
             }
+        }
+
+        public void SetActiveCanvas()
+        {
+            UICanvas.SetActive(true);
         }
     }
    

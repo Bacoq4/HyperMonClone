@@ -13,6 +13,9 @@ namespace CoreGame.Collector
         [SerializeField] private Monster[] monsterPrefabs;
         [SerializeField] private Transform[] monsterHolders;
 
+        [SerializeField] private GameObject _monstersHolderParent;
+        public GameObject MonstersHolderParent => _monstersHolderParent;
+        
         public List<Monster> getPossessedMonsters()
         {
             return _possessedMonsters;

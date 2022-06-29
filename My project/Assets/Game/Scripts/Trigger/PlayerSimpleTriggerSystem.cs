@@ -30,7 +30,7 @@ namespace CoreGame.Trigger
             if (other.CompareTag("monsterCard"))
             {
                 MonsterCard monsterCard = other.GetComponent<MonsterCard>();
-                if (ballCollector.BallCount < monsterCard.MoneyCost)
+                if (ballCollector.MoneyCount < monsterCard.MoneyCost)
                 {
                     transform.DOMove(transform.position - transform.forward * backUpDistance, 1);
                 }

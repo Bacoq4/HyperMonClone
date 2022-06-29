@@ -8,10 +8,13 @@ namespace CoreGame.EnemyIndication
     public class Enemy : MonoBehaviour
     {
         [SerializeField] private Monster[] monsters;
-
-        public void activateMonster()
+        [SerializeField] private Transform spawnPoint;
+        public Monster spawnMonster(Transform lookAtTr)
         {
-            monsters[Random.Range(0, monsters.Length)].gameObject.SetActive(true);
+            Monster monster = Instantiate(monsters[Random.Range(0, monsters.Length)], spawnPoint.position, Quaternion.identity);
+            monster.transform.SetParent(transform);
+            monster.transform.LookAt(lookAtTr);
+            return monster;
         }
     }
 

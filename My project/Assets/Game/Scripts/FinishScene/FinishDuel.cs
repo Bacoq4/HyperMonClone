@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using CoreGame.Collector;
 using CoreGame.EnemyIndication;
+using CoreGame.Monsters;
 using CoreGame.Movement;
 using CoreGame.PlayerIndication;
 using CoreGame.UI;
@@ -18,11 +19,20 @@ namespace CoreGame.Finish
         [SerializeField] private FinishTrigger finishTrigger;
         [SerializeField] private Transform playerFinishPoint;
         [SerializeField] private Enemy enemy;
+        [SerializeField] private Transform playerSpawnPoint;
 
         private PlayerUIController UIController;
+
+        private Monster playerMonster = null;
+        private Monster enemyMonster = null;
         private void Start()
         {
             finishTrigger.OnLevelFinished += OnFinish;
+            UIController.OnSpawnMonster += makeDuel;
+        }
+
+        private void makeDuel()
+        {
             
         }
 
@@ -52,6 +62,8 @@ namespace CoreGame.Finish
             finishTrigger.player.GetComponent<ForwardMovement>().enabled = false;
             MonsterCollector monsterCollector = finishTrigger.player.GetComponent<MonsterCollector>();
             monsterCollector.MonstersHolderParent.SetActive(false);
+            
+            enemyMonster = enemy.spawnMonster(playerSpawnPoint);
             
             while (true)
             {

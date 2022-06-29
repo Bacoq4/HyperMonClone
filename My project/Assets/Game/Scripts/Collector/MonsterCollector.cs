@@ -20,6 +20,10 @@ namespace CoreGame.Collector
         {
             return _possessedMonsters;
         }
+        public Monster[] getMonsterPrefabs()
+        {
+            return monsterPrefabs;
+        }
 
         public void addMonster(MonsterType monsterType)
         {

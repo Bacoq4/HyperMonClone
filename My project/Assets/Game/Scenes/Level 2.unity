@@ -5192,7 +5192,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
-  m_LocalRotation: {x: 0.24600932, y: 0.0021468995, z: -0.008458329, w: 0.9692282}
+  m_LocalRotation: {x: 0.24600932, y: 0.0021468827, z: -0.008458325, w: 0.9692282}
   m_LocalPosition: {x: 0, y: 4.92, z: -7.36}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5257,34 +5257,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1317982989}
     m_Modifications:
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.size
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.data[4]
-      value: 
-      objectReference: {fileID: 6546368389493161928, guid: 82af3d8d08ae0461fbff7e80c3b1b53a, type: 3}
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.data[5]
-      value: 
-      objectReference: {fileID: 1545936081964173600, guid: 356a375792ebf48a5990546fdf6a40aa, type: 3}
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.data[6]
-      value: 
-      objectReference: {fileID: 6546368389493161928, guid: 82af3d8d08ae0461fbff7e80c3b1b53a, type: 3}
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.data[7]
-      value: 
-      objectReference: {fileID: 1545936081964173600, guid: 356a375792ebf48a5990546fdf6a40aa, type: 3}
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.data[8]
-      value: 
-      objectReference: {fileID: 6546368389493161928, guid: 82af3d8d08ae0461fbff7e80c3b1b53a, type: 3}
-    - target: {fileID: -2536894615907790, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
-      propertyPath: monsters.Array.data[9]
-      value: 
-      objectReference: {fileID: 1545936081964173600, guid: 356a375792ebf48a5990546fdf6a40aa, type: 3}
     - target: {fileID: 337484132, guid: c65e02548a4b74d7e88a82f697dda6db, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.107
@@ -11092,11 +11064,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 942987040, guid: 159d4eec8561d442d81f6b5152ccc3d7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000008338772
+      value: -0.000000008338772
       objectReference: {fileID: 0}
     - target: {fileID: 942987040, guid: 159d4eec8561d442d81f6b5152ccc3d7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000021165454
+      value: 0.0000000021165454
       objectReference: {fileID: 0}
     - target: {fileID: 5786627930257204175, guid: 159d4eec8561d442d81f6b5152ccc3d7, type: 3}
       propertyPath: givenMoneyAmount

@@ -11,6 +11,10 @@ PrefabInstance:
       propertyPath: _moneyCost
       value: 1000
       objectReference: {fileID: 0}
+    - target: {fileID: 3380118712814860618, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3380118713669973345, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: m_Color.b
       value: 0.990566
@@ -27,6 +31,14 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: d1803ba51ef6841e9831e28f8602169f, type: 3}
+    - target: {fileID: 4254733411488278231, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: m_text
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4254733411488278231, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: m_enableWordWrapping
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4718138377082287194, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: m_RootOrder
       value: 0

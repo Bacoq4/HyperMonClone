@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CoreGame.Animation;
 using CoreGame.Movement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -111,6 +112,7 @@ public class GameManager : MonoBehaviour
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<SwerveMovement>().enabled = true;
         player.GetComponent<ForwardMovement>().enabled = true;
+        player.GetComponent<PlayerAnimController>().setIsRunning(true);
     }
     
     private void SingleEventSystem()
@@ -126,5 +128,10 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         menu.SetActive(trueOrFalse);
+    }
+
+    public void setFalseLevelText()
+    {
+        levelText.gameObject.SetActive(false);
     }
 }

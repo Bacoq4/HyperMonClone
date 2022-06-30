@@ -74,6 +74,7 @@ namespace CoreGame.UI
                 duelMonster.transform.SetParent(transform);
             }
             
+            // throw animations and spawn will start here
             OnSpawnMonster?.Invoke();
         }
 

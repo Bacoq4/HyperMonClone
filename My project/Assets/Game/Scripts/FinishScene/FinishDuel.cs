@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CoreGame.Animation;
 using CoreGame.Collector;
 using CoreGame.EnemyIndication;
 using CoreGame.Monsters;
@@ -28,7 +29,8 @@ namespace CoreGame.Finish
         [SerializeField] private GameObject ScoreCanvas;
 
         private PlayerUIController UIController;
-
+        private PlayerAnimController animController;
+        
         private Monster enemyMonster = null;
 
         private int playerScore;
@@ -80,6 +82,7 @@ namespace CoreGame.Finish
             else
             {
                 UIController.UICanvas.SetActive(true);
+                // throw animations and spawn will start here
                 enemyMonster = enemy.spawnMonster(playerSpawnPoint);
                 enemyMonster.setActiveCanvas(true);
             }
@@ -88,7 +91,10 @@ namespace CoreGame.Finish
 
         private void OnFinish()
         {
-            ScoreCanvas.SetActive(true);
+            ScoreCanvas.SetActive(true); 
+            animController = finishTrigger.player.GetComponent<PlayerAnimController>();
+            
+            GameManager.Instance.setFalseLevelText();
             UIController = finishTrigger.player.GetComponent<PlayerUIController>();
             UIController.OnSpawnMonster += OnDuelStarted;
             MovePlayerToFinishPoint(finishTrigger.player);
@@ -103,6 +109,7 @@ namespace CoreGame.Finish
             player.transform.DOLookAt(lookPos, 1).SetEase(Ease.Linear).OnComplete(() =>
             {
                 StartCoroutine(StartFinishDuel());
+                animController.setIsRunning(false);
             });
         }
 
@@ -116,6 +123,7 @@ namespace CoreGame.Finish
             MonsterCollector monsterCollector = finishTrigger.player.GetComponent<MonsterCollector>();
             monsterCollector.MonstersHolderParent.SetActive(false);
             
+            // throw animations and spawn will start here
             enemyMonster = enemy.spawnMonster(playerSpawnPoint);
             enemyMonster.setActiveCanvas(true);
             

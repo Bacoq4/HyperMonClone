@@ -19,6 +19,18 @@ PrefabInstance:
       propertyPath: _monsterType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3380118713669973345, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: m_Color.b
+      value: 0.990566
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380118713669973345, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: m_Color.g
+      value: 0.48033106
+      objectReference: {fileID: 0}
+    - target: {fileID: 3380118713669973345, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
+      propertyPath: m_Color.r
+      value: 0.60990113
+      objectReference: {fileID: 0}
     - target: {fileID: 4718138377082287194, guid: 7b79314925b2e48e8a4f7a44c86f6538, type: 3}
       propertyPath: m_RootOrder
       value: 0

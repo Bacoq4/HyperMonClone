@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: PlayerSwerveSettings
   m_EditorClassIdentifier: 
   _maxSwerveAmount: 1
-  _positionClampLeft: -7
-  _positionClampRight: 7
+  _positionClampLeft: -4.6
+  _positionClampRight: 4.62
   _swerveSpeed: 1
   _forwardSpeed: 5

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using CoreGame.Movement;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using NaughtyAttributes;
@@ -29,7 +30,7 @@ public class GameManager : MonoBehaviour
     [BoxGroup("GAME STATE UI"), SerializeField] private GameObject levelCompletedUI;
     [BoxGroup("GAME STATE UI"), SerializeField] private GameObject gameOverUI;
     [BoxGroup("TEXT SETUP"), SerializeField] private TextMeshProUGUI levelText;
-
+    
     private void Awake()
     {
         if (instance == null)
@@ -107,6 +108,9 @@ public class GameManager : MonoBehaviour
         beforeGameplayUI.SetActive(false);
         levelCompletedUI.SetActive(false);
         gameOverUI.SetActive(false);
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<SwerveMovement>().enabled = true;
+        player.GetComponent<ForwardMovement>().enabled = true;
     }
     
     private void SingleEventSystem()

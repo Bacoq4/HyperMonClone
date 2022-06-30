@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1482652449209955660, guid: eac24b8f90e2e4b9f9f853557ad01d99, type: 3}
+      propertyPath: m_Radius
+      value: 0.63
+      objectReference: {fileID: 0}
     - target: {fileID: 1482652449209955661, guid: eac24b8f90e2e4b9f9f853557ad01d99, type: 3}
       propertyPath: m_Name
       value: XPokeball
@@ -60,8 +64,94 @@ PrefabInstance:
       value: xPokeball
       objectReference: {fileID: 0}
     - target: {fileID: 1482652449209955663, guid: eac24b8f90e2e4b9f9f853557ad01d99, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1482652449209955663, guid: eac24b8f90e2e4b9f9f853557ad01d99, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: fa186fe58c8ac4cc2b5afd7543b05989, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eac24b8f90e2e4b9f9f853557ad01d99, type: 3}
+--- !u!4 &1095210632873359369 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1482652449209955657, guid: eac24b8f90e2e4b9f9f853557ad01d99, type: 3}
+  m_PrefabInstance: {fileID: 1991022905099554112}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6319632811531949401
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1095210632873359369}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 21.26332
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 21.26332
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 21.26332
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_Name
+      value: Pokeball
+      objectReference: {fileID: 0}
+    - target: {fileID: 5901893356585517859, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa186fe58c8ac4cc2b5afd7543b05989, type: 2}
+    - target: {fileID: 5901893356585517859, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}
+      propertyPath: m_Materials.Array.data[3]
+      value: 
+      objectReference: {fileID: 2100000, guid: fa186fe58c8ac4cc2b5afd7543b05989, type: 2}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09863c04ca1fd423f98ff26d71f18f33, type: 3}

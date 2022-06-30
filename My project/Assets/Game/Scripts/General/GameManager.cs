@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     public void LoadReachedLevel()
     {
         CurrentGameState = GameState.BeforeGameplay;
-        SceneManager.LoadScene(PlayerPrefs.GetInt("reachedLevel", 2));
+        SceneManager.LoadScene(PlayerPrefs.GetInt("reachedLevel", 1));
         levelText.text = "Level " + PlayerPrefs.GetInt("fakeLevelNumber", 1).ToString();
         levelCompletedUI.SetActive(false);
         gameOverUI.SetActive(false);

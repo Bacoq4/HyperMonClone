@@ -79,23 +79,33 @@ namespace CoreGame.UI
 
         void Button1OnClick()
         {
+            setFalseButtonParent(0);
             spawnMonsterByName(monsterImages[0].sprite.name);
         }
         void Button2OnClick()
         {
+            setFalseButtonParent(1);
             spawnMonsterByName(monsterImages[1].sprite.name);
         }
         void Button3OnClick()
         {
+            setFalseButtonParent(2);
             spawnMonsterByName(monsterImages[2].sprite.name);
         }
         void Button4OnClick()
         {
+            setFalseButtonParent(3);
             spawnMonsterByName(monsterImages[3].sprite.name);
         }
         void Button5OnClick()
         {
+            setFalseButtonParent(4);
             spawnMonsterByName(monsterImages[4].sprite.name);
+        }
+
+        public void setFalseButtonParent(int index)
+        {
+            monsterButtons[index].transform.parent.gameObject.SetActive(false);
         }
         public void InitializeFinalCards()
         {

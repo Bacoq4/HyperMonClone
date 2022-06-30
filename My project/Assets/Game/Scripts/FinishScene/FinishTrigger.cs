@@ -9,14 +9,14 @@ namespace CoreGame.Finish
 {
     public class FinishTrigger : MonoBehaviour
     {
-        public UnityAction OnLevelFinished;
+        public UnityAction OnDuelStarted;
         [HideInInspector] public Player player;
         private void OnTriggerEnter(Collider other)
         {
             if (other.CompareTag("Player"))
             {
                 player = other.GetComponent<Player>();
-                OnLevelFinished?.Invoke();
+                OnDuelStarted?.Invoke();
             }
         }
     }

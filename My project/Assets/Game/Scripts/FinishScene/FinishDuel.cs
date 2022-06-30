@@ -8,6 +8,8 @@ using CoreGame.Movement;
 using CoreGame.PlayerIndication;
 using CoreGame.UI;
 using DG.Tweening;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -20,6 +22,10 @@ namespace CoreGame.Finish
         [SerializeField] private Transform playerFinishPoint;
         [SerializeField] private Enemy enemy;
         [SerializeField] private Transform playerSpawnPoint;
+        
+        [SerializeField] private TextMeshProUGUI playerScoreText;
+        [SerializeField] private TextMeshProUGUI enemyScoreText;
+        [SerializeField] private GameObject ScoreCanvas;
 
         private PlayerUIController UIController;
 
@@ -27,9 +33,10 @@ namespace CoreGame.Finish
 
         private int playerScore;
         private int enemyScore;
+        private int roundNumber;
         private void Start()
         {
-            finishTrigger.OnLevelFinished += OnFinish;
+            finishTrigger.OnDuelStarted += OnFinish;
         }
 
         private void OnDuelStarted()
@@ -41,24 +48,47 @@ namespace CoreGame.Finish
         private IEnumerator makeDuel()
         {
             yield return new WaitForSeconds(1);
+            roundNumber++;
             if (UIController.duelMonster.AttackPower > enemyMonster.AttackPower)
             {
                 playerScore++;
+                playerScoreText.text = playerScore.ToString();
             }
             else if(UIController.duelMonster.AttackPower < enemyMonster.AttackPower)
             {
                 enemyScore++;
+                enemyScoreText.text = enemyScore.ToString();
             }
             Destroy(enemyMonster.gameObject);
             Destroy(UIController.duelMonster.gameObject);
             yield return new WaitForSeconds(0.5f);
-            UIController.UICanvas.SetActive(true);
-            enemyMonster = enemy.spawnMonster(playerSpawnPoint);
-            enemyMonster.setActiveCanvas(true);
+
+            if (roundNumber == 5)
+            {
+                if (GameManager.Instance)
+                {
+                    if (playerScore >= enemyScore)
+                    {
+                        GameManager.Instance.Win();
+                    }
+                    else
+                    {
+                        GameManager.Instance.Lose();
+                    }
+                }
+            }
+            else
+            {
+                UIController.UICanvas.SetActive(true);
+                enemyMonster = enemy.spawnMonster(playerSpawnPoint);
+                enemyMonster.setActiveCanvas(true);
+            }
+            
         }
 
         private void OnFinish()
         {
+            ScoreCanvas.SetActive(true);
             UIController = finishTrigger.player.GetComponent<PlayerUIController>();
             UIController.OnSpawnMonster += OnDuelStarted;
             MovePlayerToFinishPoint(finishTrigger.player);

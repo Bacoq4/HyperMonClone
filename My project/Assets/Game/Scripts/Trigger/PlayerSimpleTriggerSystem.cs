@@ -37,6 +37,7 @@ namespace CoreGame.Trigger
                 else
                 {
                     monsterCollector.addMonster(monsterCard.MonsterType);
+                    Destroy(monsterCard.transform.parent.gameObject);
                 }
             }
         }

@@ -3922,6 +3922,8 @@ GameObject:
   - component: {fileID: 5786627930257204175}
   - component: {fileID: 4361405930870013151}
   - component: {fileID: 8382402994418063218}
+  - component: {fileID: 7743244831959393586}
+  - component: {fileID: 2002088691}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4073,6 +4075,8 @@ MonoBehaviour:
   ballCollector: {fileID: 4670202056561299448}
   monsterCollector: {fileID: 3932583327807966544}
   backUpDistance: 4
+  takenMoneyAmount: 75
+  givenMoneyAmount: 50
 --- !u!114 &4361405930870013151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4125,6 +4129,39 @@ MonoBehaviour:
   _UICanvas: {fileID: 1402754475}
   spawnPoint: {fileID: 0}
   duelMonster: {fileID: 0}
+--- !u!114 &7743244831959393586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869615732494382258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4372ecd954c37594ba560966df627a1e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 2002088691}
+--- !u!95 &2002088691
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8869615732494382258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 12e5bff4f52884a199ae4cfa7c104d6a, type: 3}
+  m_Controller: {fileID: 9100000, guid: c28f97aadcce1014ba5af3feff6b57dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &9058644401456784918
 GameObject:
   m_ObjectHideFlags: 0

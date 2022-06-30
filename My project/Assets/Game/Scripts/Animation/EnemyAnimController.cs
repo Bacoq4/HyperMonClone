@@ -2,20 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace CoreGame.Animation
+namespace CoreGame.EnemyIndication.Animation
 {
-    public class PlayerAnimController : MonoBehaviour
+    public class EnemyAnimController : MonoBehaviour
     {
         [SerializeField] private Animator animator;
 
-        public void setIsRunning(bool b)
-        {
-            animator.SetBool("isRunning",b);
-        }
         public void playThrowAnim()
         {
             animator.SetTrigger("throw");
         }
     }
-   
+
 }

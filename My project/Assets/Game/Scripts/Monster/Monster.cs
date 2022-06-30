@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 namespace CoreGame.Monsters
@@ -14,12 +16,27 @@ namespace CoreGame.Monsters
 
 
         [SerializeField] private Sprite _monsterSprite;
+        [SerializeField] private TextMeshProUGUI attackPowerText;
+        [SerializeField] private GameObject Canvas;
+        
+        private void Awake()
+        {
+            setActiveCanvas(false);
+            attackPowerText.text = AttackPower.ToString();
+        }
+
+        public void setActiveCanvas(bool b)
+        {
+            Canvas.SetActive(b);
+        }
 
         public Sprite MonsterSprite
         {
             get => _monsterSprite;
             set => _monsterSprite = value;
         }
+        
+        
     }
 
 }

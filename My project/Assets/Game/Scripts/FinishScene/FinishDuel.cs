@@ -23,29 +23,52 @@ namespace CoreGame.Finish
 
         private PlayerUIController UIController;
 
-        private Monster playerMonster = null;
         private Monster enemyMonster = null;
+
+        private int playerScore;
+        private int enemyScore;
         private void Start()
         {
             finishTrigger.OnLevelFinished += OnFinish;
-            UIController.OnSpawnMonster += makeDuel;
         }
 
-        private void makeDuel()
+        private void OnDuelStarted()
         {
-            
+            UIController.UICanvas.SetActive(false);
+            StartCoroutine(makeDuel());
+        }
+
+        private IEnumerator makeDuel()
+        {
+            yield return new WaitForSeconds(1);
+            if (UIController.duelMonster.AttackPower > enemyMonster.AttackPower)
+            {
+                playerScore++;
+            }
+            else if(UIController.duelMonster.AttackPower < enemyMonster.AttackPower)
+            {
+                enemyScore++;
+            }
+            Destroy(enemyMonster.gameObject);
+            Destroy(UIController.duelMonster.gameObject);
+            yield return new WaitForSeconds(0.5f);
+            UIController.UICanvas.SetActive(true);
+            enemyMonster = enemy.spawnMonster(playerSpawnPoint);
+            enemyMonster.setActiveCanvas(true);
         }
 
         private void OnFinish()
         {
-            MovePlayerToFinishPoint(finishTrigger.player);
             UIController = finishTrigger.player.GetComponent<PlayerUIController>();
+            UIController.OnSpawnMonster += OnDuelStarted;
+            MovePlayerToFinishPoint(finishTrigger.player);
         }
 
         private void MovePlayerToFinishPoint(Player player)
         {
             var finishPos = playerFinishPoint.position;
-            var lookPos = new Vector3(finishPos.x, player.transform.position.y, finishPos.z);
+            var spawnPos = UIController.spawnPoint.position;
+            var lookPos = new Vector3(spawnPos.x, player.transform.position.y, spawnPos.z);
             player.transform.DOMove(finishPos,1);
             player.transform.DOLookAt(lookPos, 1).SetEase(Ease.Linear).OnComplete(() =>
             {
@@ -64,6 +87,7 @@ namespace CoreGame.Finish
             monsterCollector.MonstersHolderParent.SetActive(false);
             
             enemyMonster = enemy.spawnMonster(playerSpawnPoint);
+            enemyMonster.setActiveCanvas(true);
             
             while (true)
             {

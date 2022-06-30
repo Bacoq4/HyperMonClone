@@ -8,6 +8,7 @@ using CoreGame.Monsters;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
 
@@ -22,14 +23,15 @@ namespace CoreGame.UI
         [SerializeField] private Button[] monsterButtons;
 
         [SerializeField] private MonsterCollector monsterCollector;
-        [SerializeField] private GameObject UICanvas;
+        [FormerlySerializedAs("UICanvas")] [SerializeField] private GameObject _UICanvas;
+        public GameObject UICanvas => _UICanvas;
 
         private Monster[] monsterPrefabs;
 
-        private Transform spawnPoint;
+        public Transform spawnPoint;
         public UnityAction OnSpawnMonster;
 
-        public Monster duelMonster = null;
+        [HideInInspector] public Monster duelMonster = null;
         void Start()
         {
             monsterPrefabs = monsterCollector.getMonsterPrefabs();
@@ -78,27 +80,22 @@ namespace CoreGame.UI
         void Button1OnClick()
         {
             spawnMonsterByName(monsterImages[0].sprite.name);
-            Debug.Log(monsterImages[0].sprite.name);
         }
         void Button2OnClick()
         {
             spawnMonsterByName(monsterImages[1].sprite.name);
-            Debug.Log(monsterImages[1].sprite.name);
         }
         void Button3OnClick()
         {
             spawnMonsterByName(monsterImages[2].sprite.name);
-            Debug.Log(monsterImages[2].sprite.name);
         }
         void Button4OnClick()
         {
             spawnMonsterByName(monsterImages[3].sprite.name);
-            Debug.Log(monsterImages[3].sprite.name);
         }
         void Button5OnClick()
         {
             spawnMonsterByName(monsterImages[4].sprite.name);
-            Debug.Log(monsterImages[4].sprite.name);
         }
         public void InitializeFinalCards()
         {
@@ -124,7 +121,7 @@ namespace CoreGame.UI
 
         public void SetActiveCanvas()
         {
-            UICanvas.SetActive(true);
+            _UICanvas.SetActive(true);
         }
         
         

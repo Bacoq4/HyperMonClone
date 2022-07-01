@@ -2,9 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using CoreGame.Animation;
 using CoreGame.Collectable;
 using CoreGame.Collector;
 using CoreGame.Monsters;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -26,12 +28,18 @@ namespace CoreGame.UI
         [FormerlySerializedAs("UICanvas")] [SerializeField] private GameObject _UICanvas;
         public GameObject UICanvas => _UICanvas;
 
+        // variables and some methods below normally should be in different class , but rn lack of time make me do it.
         private Monster[] monsterPrefabs;
-
-        public Transform spawnPoint;
+        
+        [HideInInspector] public Transform spawnPoint;
         public UnityAction OnSpawnMonster;
 
         [HideInInspector] public Monster duelMonster = null;
+        
+        [Header("Variables not belong this class, can be changed in future")]
+        [SerializeField] private PlayerAnimController animController;
+        [SerializeField] private GameObject pokeBallPrefab;
+        [SerializeField] private Transform pokeBallSpawnPos;
         void Start()
         {
             monsterPrefabs = monsterCollector.getMonsterPrefabs();
@@ -74,8 +82,25 @@ namespace CoreGame.UI
                 duelMonster.transform.SetParent(transform);
             }
             
-            // throw animations and spawn will start here
-            OnSpawnMonster?.Invoke();
+            // throw animations and spawn is starting here
+            animController.playThrowAnim();
+            
+        }
+
+        // animation event
+        void throwPokeBall()
+        {
+            GameObject ball = spawnBall();
+            ball.transform.DOMove(spawnPoint.position, 1).OnComplete(() =>
+            {
+                OnSpawnMonster?.Invoke();
+            });
+        }
+
+        GameObject spawnBall()
+        {
+            GameObject pokeBall = Instantiate(pokeBallPrefab, pokeBallSpawnPos.position, Quaternion.identity);
+            return pokeBall;
         }
 
         void Button1OnClick()

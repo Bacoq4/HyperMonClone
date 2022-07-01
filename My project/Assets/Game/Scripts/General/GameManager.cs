@@ -130,8 +130,8 @@ public class GameManager : MonoBehaviour
         menu.SetActive(trueOrFalse);
     }
 
-    public void setFalseLevelText()
+    public void setActiveLevelText(bool b)
     {
-        levelText.gameObject.SetActive(false);
+        levelText.gameObject.SetActive(b);
     }
 }

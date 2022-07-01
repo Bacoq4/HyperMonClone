@@ -38,6 +38,7 @@ namespace CoreGame.Finish
         private int roundNumber;
         private void Start()
         {
+            GameManager.Instance.setActiveLevelText(true);
             finishTrigger.OnDuelStarted += OnFinish;
         }
 
@@ -99,7 +100,7 @@ namespace CoreGame.Finish
             
             animController = finishTrigger.player.GetComponent<PlayerAnimController>();
             
-            GameManager.Instance.setFalseLevelText();
+            GameManager.Instance.setActiveLevelText(false);
             UIController = finishTrigger.player.GetComponent<PlayerUIController>();
             UIController.OnSpawnMonster += OnDuelStarted;
             UIController.moneyCanvas.SetActive(false);

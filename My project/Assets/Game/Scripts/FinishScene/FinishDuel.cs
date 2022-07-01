@@ -49,7 +49,11 @@ namespace CoreGame.Finish
 
         private IEnumerator makeDuel()
         {
-            yield return new WaitForSeconds(1);
+            yield return new WaitForSeconds(0.5f);
+            
+            ParticleSpawner.Instance.spawnParticle(ParticleSpawner.Instance.monsterHitEffect,0.5f, UIController.duelMonster.transform.position);
+            ParticleSpawner.Instance.spawnParticle(ParticleSpawner.Instance.monsterHitEffect,0.5f, enemyMonster.transform.position);
+            yield return new WaitForSeconds(0.5f);
             roundNumber++;
             if (UIController.duelMonster.AttackPower > enemyMonster.AttackPower)
             {

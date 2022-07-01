@@ -21,12 +21,14 @@ namespace CoreGame.Trigger
         {
             if (other.CompareTag("pokeball"))
             {
+                ParticleSpawner.Instance.spawnParticle(ParticleSpawner.Instance.collectBallEffect, 1, other.transform.position );
                 ballCollector.increaseMoney(takenMoneyAmount);
                 Destroy(other.gameObject);
             }
             
             if (other.CompareTag("xPokeball"))
             {
+                ParticleSpawner.Instance.spawnParticle(ParticleSpawner.Instance.collectXBallEffect, 1, other.transform.position );
                 ballCollector.decreaseMoney(givenMoneyAmount);
                 Destroy(other.gameObject);
             }
@@ -55,6 +57,7 @@ namespace CoreGame.Trigger
                 else
                 {
                     backUpCount = 0;
+                    ParticleSpawner.Instance.spawnParticle(ParticleSpawner.Instance.collectMonsterEffect, 1, other.transform.position);
                     ballCollector.decreaseMoney(monsterCard.MoneyCost);
                     monsterCollector.addMonster(monsterCard.MonsterType);
                     Destroy(monsterCard.transform.parent.gameObject);

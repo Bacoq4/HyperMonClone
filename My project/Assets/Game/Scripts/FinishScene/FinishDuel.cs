@@ -92,11 +92,14 @@ namespace CoreGame.Finish
         private void OnFinish()
         {
             ScoreCanvas.SetActive(true); 
+            
             animController = finishTrigger.player.GetComponent<PlayerAnimController>();
             
             GameManager.Instance.setFalseLevelText();
             UIController = finishTrigger.player.GetComponent<PlayerUIController>();
             UIController.OnSpawnMonster += OnDuelStarted;
+            UIController.moneyCanvas.SetActive(false);
+            UIController.vCam.LookAt = playerSpawnPoint;
             MovePlayerToFinishPoint(finishTrigger.player);
         }
 

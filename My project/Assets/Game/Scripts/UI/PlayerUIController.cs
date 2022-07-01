@@ -13,7 +13,7 @@ using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Debug = UnityEngine.Debug;
-
+using Cinemachine;
 
 namespace CoreGame.UI
 {
@@ -27,6 +27,7 @@ namespace CoreGame.UI
         [SerializeField] private MonsterCollector monsterCollector;
         [FormerlySerializedAs("UICanvas")] [SerializeField] private GameObject _UICanvas;
         public GameObject UICanvas => _UICanvas;
+        public GameObject moneyCanvas;
 
         // variables and some methods below normally should be in different class , but rn lack of time make me do it.
         private Monster[] monsterPrefabs;
@@ -40,6 +41,7 @@ namespace CoreGame.UI
         [SerializeField] private PlayerAnimController animController;
         [SerializeField] private GameObject pokeBallPrefab;
         [SerializeField] private Transform pokeBallSpawnPos;
+        public CinemachineVirtualCamera vCam;
         void Start()
         {
             monsterPrefabs = monsterCollector.getMonsterPrefabs();
@@ -58,8 +60,12 @@ namespace CoreGame.UI
             spawnPoint = GameObject.FindGameObjectWithTag("spawnPoint").transform;
         }
 
-        private void spawnMonsterByName(string monsterName)
+        private IEnumerator spawnMonsterByName(string monsterName)
         {
+            animController.playThrowAnim();
+
+            yield return new WaitForSeconds(1f);
+            
             if (monsterName == "spook")
             {
                 duelMonster = Instantiate(monsterPrefabs[1],spawnPoint.position ,Quaternion.identity);
@@ -83,16 +89,17 @@ namespace CoreGame.UI
             }
             
             // throw animations and spawn is starting here
-            animController.playThrowAnim();
             
         }
 
         // animation event
-        void throwPokeBall()
+        public void throwPokeBall()
         {
             GameObject ball = spawnBall();
-            ball.transform.DOMove(spawnPoint.position, 1).OnComplete(() =>
+            ball.transform.DOMove(spawnPoint.position + Vector3.up, 0.4f).OnComplete(() =>
             {
+                Destroy(ball);
+                print(1);
                 OnSpawnMonster?.Invoke();
             });
         }
@@ -106,27 +113,27 @@ namespace CoreGame.UI
         void Button1OnClick()
         {
             setFalseButtonParent(0);
-            spawnMonsterByName(monsterImages[0].sprite.name);
+             StartCoroutine(spawnMonsterByName(monsterImages[0].sprite.name));
         }
         void Button2OnClick()
         {
             setFalseButtonParent(1);
-            spawnMonsterByName(monsterImages[1].sprite.name);
+            StartCoroutine(spawnMonsterByName(monsterImages[1].sprite.name));
         }
         void Button3OnClick()
         {
             setFalseButtonParent(2);
-            spawnMonsterByName(monsterImages[2].sprite.name);
+            StartCoroutine(spawnMonsterByName(monsterImages[2].sprite.name));
         }
         void Button4OnClick()
         {
             setFalseButtonParent(3);
-            spawnMonsterByName(monsterImages[3].sprite.name);
+            StartCoroutine(spawnMonsterByName(monsterImages[3].sprite.name));
         }
         void Button5OnClick()
         {
             setFalseButtonParent(4);
-            spawnMonsterByName(monsterImages[4].sprite.name);
+            StartCoroutine(spawnMonsterByName(monsterImages[4].sprite.name));
         }
 
         public void setFalseButtonParent(int index)

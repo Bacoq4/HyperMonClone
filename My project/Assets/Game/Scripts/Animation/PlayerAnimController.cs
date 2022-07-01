@@ -17,5 +17,4 @@ namespace CoreGame.Animation
             animator.SetTrigger("throw");
         }
     }
-   
 }
